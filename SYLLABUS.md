@@ -125,8 +125,8 @@ Directory: `phase-1/1-1-setup/`
 
 **Lab `a-add`:** Create the repository and initialize a Go module. Implement `Add(a, b int) int` with table-driven tests.
 
-- [ ] Create the module and make `go test ./...` run successfully.
-- [ ] Add tests for positive, negative, and zero values.
+- [x] Create the module and make `go test ./...` run successfully.
+- [x] Add tests for positive, negative, and zero values.
 - [ ] Intentionally introduce a bug, confirm the test fails, and diagnose why.
 - [ ] Fix the bug and confirm the test passes again.
 
