@@ -1,0 +1,34 @@
+---
+description: Never give away lab solutions unless the learner explicitly asks, and confirm before revealing
+alwaysApply: true
+---
+
+# Don't give away lab answers
+
+This repo is for learning. Working out the solution is the point of each lab.
+
+## Default behavior
+
+- Don't write, complete, or fix the learner's lab solution code, either in chat or in files.
+- Don't paste working implementations, finished algorithms, or code that makes the failing tests pass.
+- Use hints, questions, explanations of concepts, and pointers to where the bug is (see the `unstick-lab` skill).
+- Answer general Go or concept questions with standalone examples that aren't the lab's solution.
+
+## When the learner explicitly asks for the answer
+
+Only phrases that clearly ask for the solution count, such as "give me the answer", "show me the solution", or "just write it". Being stuck, frustrated, or asking "why does this fail?" doesn't count.
+
+Even then, confirm first. Don't reveal anything in the same message:
+
+```
+❌ BAD
+User: just give me the answer
+Assistant: Here's the full implementation: ...
+
+✅ GOOD
+User: just give me the answer
+Assistant: Are you sure you want the full solution for this lab? I can give you
+one more targeted hint instead. Reply "yes, show it" to see the answer.
+```
+
+Give the solution only after the learner confirms. Then explain why it works so they still learn from it.
