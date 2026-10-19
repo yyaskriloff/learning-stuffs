@@ -136,7 +136,7 @@ Some topics may take one session, while others may require several. Topics such 
 
 ## 3. The Syllabus Becomes Executable Before We Start
 
-[SYLLABUS.md](SYLLABUS.md) is the ordered lesson list for this program. It stays as written for now. The goal, before any lesson is started, is to revise every checkbox into a verifiable task.
+[SYLLABUS.md](SYLLABUS.md) is the ordered lesson list for this program. Every checkbox in it is a verifiable task, and each lesson states its assessment types, edge cases, pass criteria, and remediation path.
 
 A lesson can contain several labs. A lab can contain several tests. Each lab is one checkbox on the syllabus: a specific piece of work with a result that can be checked.
 
@@ -168,10 +168,15 @@ Every checkbox uses one or more of these assessment types. The lab states which 
 
 Each lesson has its own directory. Each lab inside that lesson has its own directory. A lab directory is self-contained: the task, my solution, the tests or rubric, the edge cases, the pass/fail rule, and the remediation path all live there.
 
+Lessons are grouped by phase:
+
 ```
-<lesson>/
-  <lab>/
-  <lab>/
+phase-1/
+  1-1-setup/
+    a-add/
+  1-2-loops/
+    a-sum-count-even/
+  exit/
 ```
 
 ---
