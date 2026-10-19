@@ -134,7 +134,49 @@ Some topics may take one session, while others may require several. Topics such 
 
 ---
 
-## 3. Weekly Training Schedule
+## 3. The Syllabus Becomes Executable Before We Start
+
+[SYLLABUS.md](SYLLABUS.md) is the ordered lesson list for this program. It stays as written for now. The goal, before any lesson is started, is to revise every checkbox into a verifiable task.
+
+A lesson can contain several labs. A lab can contain several tests. Each lab is one checkbox on the syllabus: a specific piece of work with a result that can be checked.
+
+Explaining correctness and recognizing patterns are assessed on their own. A passing unit test verifies behavior. It does not, by itself, show that I can explain the algorithm or choose the pattern.
+
+### How a checkbox is verified
+
+Every checkbox uses one or more of these assessment types. The lab states which ones apply.
+
+| Assessment type | Verification |
+| --- | --- |
+| Implementation | Automated tests verify outputs and behavior. |
+| Edge cases | Dedicated tests verify boundary conditions. |
+| Algorithm correctness | Property-based or randomized tests where appropriate. |
+| Complexity | Written analysis, benchmark experiments where useful, and a grading rubric. |
+| Reasoning | A concrete written or oral response evaluated against explicit criteria. |
+| Interview simulation | Timed task scored against a defined rubric. |
+
+### What every checkbox includes
+
+1. **A specific task and deliverable.** What I build or produce, and where it lives.
+2. **A clear definition of done.** The observable result that finishes the lab.
+3. **A test plan or assessment rubric.** The automated tests, the written criteria, or both.
+4. **Required edge cases.** The boundary conditions the lab must cover.
+5. **A rule for passing or failing.** What must pass, and what a failure means.
+6. **A remediation path if it fails.** The next drill or earlier lab to repeat before I retry.
+
+### Directory layout
+
+Each lesson has its own directory. Each lab inside that lesson has its own directory. A lab directory is self-contained: the task, my solution, the tests or rubric, the edge cases, the pass/fail rule, and the remediation path all live there.
+
+```
+<lesson>/
+  <lab>/
+  <lab>/
+```
+
+---
+
+## 4. Weekly Training Schedule
 
 Start with five sessions per week, approximately 45–60 minutes each.
 
@@ -162,7 +204,7 @@ This prevents confusing exposure to a topic with actual competence.
 
 ---
 
-## 4. Learning Go Alongside Algorithms
+## 5. Learning Go Alongside Algorithms
 
 I don't need to finish an entire Go course before starting DSA. We'll learn language features when they become useful.
 
@@ -218,7 +260,7 @@ The goal is to learn Go through algorithmic problem-solving rather than separati
 
 ---
 
-## 5. The Standard Problem-Solving Checklist
+## 6. The Standard Problem-Solving Checklist
 
 Every substantial problem should follow this process. The objective is to make it habitual, even under interview pressure.
 
@@ -240,7 +282,7 @@ I am not expected to find the optimal solution immediately. A correct brute-forc
 
 ---
 
-## 6. How ChatGPT Should Teach Me
+## 7. How ChatGPT Should Teach Me
 
 Act as my instructor, coding mentor, and interview coach.
 
@@ -278,7 +320,7 @@ For each lesson:
 
 ---
 
-## 7. Definition of Success
+## 8. Definition of Success
 
 By the end of the program, I should be able to:
 
