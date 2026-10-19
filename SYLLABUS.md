@@ -123,12 +123,12 @@ Every phase exit includes a retest of a lab from an earlier phase, at least one 
 
 Directory: `phase-1/1-1-setup/`
 
-**Lab `a-add`:** Create the repository and initialize a Go module. Implement `Add(a, b int) int` with table-driven tests.
+**Lab** `a-add`**:** Create the repository and initialize a Go module. Implement `Add(a, b int) int` with table-driven tests.
 
 - [x] Create the module and make `go test ./...` run successfully.
 - [x] Add tests for positive, negative, and zero values.
-- [ ] Intentionally introduce a bug, confirm the test fails, and diagnose why.
-- [ ] Fix the bug and confirm the test passes again.
+- [x] Intentionally introduce a bug, confirm the test fails, and diagnose why.
+- [x] Fix the bug and confirm the test passes again.
 
 **Required edge cases:** zero plus zero, mixed signs, both negative.
 
@@ -142,7 +142,7 @@ Directory: `phase-1/1-1-setup/`
 
 Directory: `phase-1/1-2-loops/`
 
-**Lab `a-sum-count-even`:** Implement:
+**Lab** `a-sum-count-even`**:** Implement:
 
 - [ ] `Sum(nums []int) int`
 - [ ] `CountEven(nums []int) int`
@@ -160,7 +160,7 @@ Directory: `phase-1/1-2-loops/`
 
 Directory: `phase-1/1-3-time-complexity/`
 
-**Lab `a-snippets`:** Analyze short snippets containing:
+**Lab** `a-snippets`**:** Analyze short snippets containing:
 
 - [ ] A single loop.
 - [ ] Nested loops.
@@ -180,7 +180,7 @@ Directory: `phase-1/1-3-time-complexity/`
 
 Directory: `phase-1/1-4-auxiliary-space/`
 
-**Lab `a-classify`:** Classify the memory usage of algorithms that:
+**Lab** `a-classify`**:** Classify the memory usage of algorithms that:
 
 - [ ] Use a fixed number of variables.
 - [ ] Allocate a slice proportional to input size.
@@ -199,7 +199,7 @@ Directory: `phase-1/1-4-auxiliary-space/`
 
 Directory: `phase-1/1-5-errors/`
 
-**Lab `a-divide`:** Implement integer division that reports division by zero through an error.
+**Lab** `a-divide`**:** Implement integer division that reports division by zero through an error.
 
 - [ ] Define the function signature.
 - [ ] Implement the normal case.
@@ -219,12 +219,12 @@ Directory: `phase-1/1-5-errors/`
 
 Directory: `phase-1/1-6-slices/`
 
-**Lab `a-reverse-filter`:** Implement two functions:
+**Lab** `a-reverse-filter`**:** Implement two functions:
 
 - [ ] Reverse a slice in place.
 - [ ] Filter a slice into a new result without changing the input.
 
-**Lab `b-aliasing`:** Write tests that demonstrate:
+**Lab** `b-aliasing`**:** Write tests that demonstrate:
 
 - [ ] How `len` and `cap` differ.
 - [ ] How `append` may reuse or replace a backing array.
@@ -242,7 +242,7 @@ Directory: `phase-1/1-6-slices/`
 
 Directory: `phase-1/1-7-debugging/`
 
-**Lab `a-faulty`:** Take a deliberately faulty implementation of a simple algorithm. The instructor supplies it.
+**Lab** `a-faulty`**:** Take a deliberately faulty implementation of a simple algorithm. The instructor supplies it.
 
 - [ ] Reproduce the bug with a failing test.
 - [ ] Identify the smallest useful failing input.
@@ -260,7 +260,7 @@ Directory: `phase-1/1-7-debugging/`
 
 Directory: `phase-1/1-8-contracts/`
 
-**Lab `a-min-max-sorted`:** Implement:
+**Lab** `a-min-max-sorted`**:** Implement:
 
 - [ ] `MinMax(nums []int) (min, max int, ok bool)`
 - [ ] `IsSortedNonDecreasing(nums []int) bool`
@@ -280,7 +280,7 @@ Directory: `phase-1/1-8-contracts/`
 
 Directory: `phase-1/1-9-brute-force/`
 
-**Lab `a-duplicates`:** Implement duplicate detection twice: once with pairwise comparisons and once with a map.
+**Lab** `a-duplicates`**:** Implement duplicate detection twice: once with pairwise comparisons and once with a map.
 
 - [ ] Test both implementations on the same inputs.
 - [ ] Compare their results on generated random inputs.
@@ -315,7 +315,7 @@ Directory: `phase-1/exit/`
 
 Directory: `phase-2/2-1-arrays/`
 
-**Lab `a-array-problems`:**
+**Lab** `a-array-problems`**:**
 
 - [ ] Find the second-largest distinct number.
 - [ ] Move zeroes to the end while preserving the order of nonzero values.
@@ -336,7 +336,7 @@ Directory: `phase-2/2-1-arrays/`
 
 Directory: `phase-2/2-2-strings/`
 
-**Lab `a-runes`:**
+**Lab** `a-runes`**:**
 
 - [ ] Reverse a string by Unicode rune.
 - [ ] Count rune frequencies.
@@ -357,7 +357,7 @@ Directory: `phase-2/2-2-strings/`
 
 Directory: `phase-2/2-3-maps/`
 
-**Lab `a-frequency`:**
+**Lab** `a-frequency`**:**
 
 - [ ] Implement a frequency map.
 - [ ] Detect duplicates.
@@ -378,7 +378,7 @@ Directory: `phase-2/2-4-sets/`
 
 Go has no built-in set type, so use a map-based representation.
 
-**Lab `a-set-ops`:**
+**Lab** `a-set-ops`**:**
 
 - [ ] Return unique values.
 - [ ] Find values shared by two collections.
@@ -397,7 +397,7 @@ Go has no built-in set type, so use a map-based representation.
 
 Directory: `phase-2/2-5-linked-lists/`
 
-**Lab `a-list-basics`:**
+**Lab** `a-list-basics`**:**
 
 - [ ] Define a singly linked-list node.
 - [ ] Build a list from a slice.
@@ -417,12 +417,12 @@ Directory: `phase-2/2-5-linked-lists/`
 
 Directory: `phase-2/2-6-list-patterns/`
 
-**Lab `a-reverse-middle`:**
+**Lab** `a-reverse-middle`**:**
 
 - [ ] Reverse a linked list.
 - [ ] Find its middle node.
 
-**Lab `b-cycle-merge`:**
+**Lab** `b-cycle-merge`**:**
 
 - [ ] Detect a cycle using Floyd's algorithm.
 - [ ] Merge two sorted linked lists.
@@ -441,12 +441,12 @@ Directory: `phase-2/2-6-list-patterns/`
 
 Directory: `phase-2/2-7-stacks/`
 
-**Lab `a-stack`:**
+**Lab** `a-stack`**:**
 
 - [ ] Implement a stack API with push, pop, and peek operations.
 - [ ] Define what happens when the stack is empty.
 
-**Lab `b-stack-problems`:**
+**Lab** `b-stack-problems`**:**
 
 - [ ] Check balanced delimiters.
 - [ ] Evaluate postfix arithmetic expressions.
@@ -463,12 +463,12 @@ Directory: `phase-2/2-7-stacks/`
 
 Directory: `phase-2/2-8-queues/`
 
-**Lab `a-queue`:**
+**Lab** `a-queue`**:**
 
 - [ ] Implement a FIFO queue.
 - [ ] Avoid repeatedly shifting all remaining elements when dequeuing.
 
-**Lab `b-deque`:**
+**Lab** `b-deque`**:**
 
 - [ ] Implement a deque or a clearly specified subset of deque operations, using a circular buffer.
 - [ ] Test empty behavior and repeated enqueue/dequeue cycles.
@@ -485,7 +485,7 @@ Directory: `phase-2/2-8-queues/`
 
 Directory: `phase-2/2-9-choosing/`
 
-**Lab `a-scenarios`:** For at least ten scenarios supplied by the instructor, choose a suitable data structure and justify the choice.
+**Lab** `a-scenarios`**:** For at least ten scenarios supplied by the instructor, choose a suitable data structure and justify the choice.
 
 - [ ] Cover lookup-heavy, insertion-heavy, ordered, sequential, and priority-based workloads.
 - [ ] State the operations that dominate each workload.
@@ -521,13 +521,13 @@ Directory: `phase-2/exit/`
 
 Directory: `phase-3/3-1-two-pointers/`
 
-**Lab `a-opposite-ends`:**
+**Lab** `a-opposite-ends`**:**
 
 - [ ] Two Sum on sorted input, returning both indexes and an `ok` flag.
 - [ ] Valid palindrome, ignoring non-alphanumeric ASCII characters and case.
 - [ ] Container with most water.
 
-**Lab `b-same-direction`:**
+**Lab** `b-same-direction`**:**
 
 - [ ] Remove all occurrences of a value in place, returning the new logical length.
 - [ ] 3Sum, returning every unique triplet that sums to zero with no duplicate triplets.
@@ -544,11 +544,11 @@ Directory: `phase-3/3-1-two-pointers/`
 
 Directory: `phase-3/3-2-sliding-window/`
 
-**Lab `a-fixed-window`:**
+**Lab** `a-fixed-window`**:**
 
 - [ ] Maximum sum of any subarray of length `k`.
 
-**Lab `b-variable-window`:**
+**Lab** `b-variable-window`**:**
 
 - [ ] Longest substring without repeating characters.
 - [ ] Minimum-length subarray whose sum is at least a target.
@@ -568,12 +568,12 @@ Directory: `phase-3/3-2-sliding-window/`
 
 Directory: `phase-3/3-3-prefix-sums/`
 
-**Lab `a-range-sum`:**
+**Lab** `a-range-sum`**:**
 
 - [ ] A `RangeSum` type with a constructor and `Query(l, r)`.
 - [ ] A 2D prefix sum with rectangle queries.
 
-**Lab `b-prefix-map`:**
+**Lab** `b-prefix-map`**:**
 
 - [ ] Count subarrays whose sum equals `k`, with negative numbers allowed.
 - [ ] Apply a list of range increments with a difference array and return the final slice.
@@ -592,13 +592,13 @@ Directory: `phase-3/3-3-prefix-sums/`
 
 Directory: `phase-3/3-4-binary-search/`
 
-**Lab `a-search`:**
+**Lab** `a-search`**:**
 
 - [ ] Classic search returning `(index, ok)`.
 - [ ] Lower bound (first index `>= x`) and upper bound (first index `> x`).
 - [ ] Search in a rotated sorted array of distinct values.
 
-**Lab `b-search-answer`:**
+**Lab** `b-search-answer`**:**
 
 - [ ] Find the minimum ship capacity that delivers all packages within `D` days.
 
@@ -614,13 +614,13 @@ Directory: `phase-3/3-4-binary-search/`
 
 Directory: `phase-3/3-5-sorting-intervals/`
 
-**Lab `a-sorts`:**
+**Lab** `a-sorts`**:**
 
 - [ ] Implement insertion sort and merge sort yourself.
 - [ ] Test merge sort's stability using structs with equal keys.
 - [ ] Sort records by multiple keys with `slices.SortFunc` or `sort.Slice`.
 
-**Lab `b-intervals`:**
+**Lab** `b-intervals`**:**
 
 - [ ] Merge overlapping intervals.
 - [ ] Insert an interval into a sorted, non-overlapping list.
@@ -640,7 +640,7 @@ Directory: `phase-3/3-5-sorting-intervals/`
 
 Directory: `phase-3/3-6-frequency/`
 
-**Lab `a-counting`:**
+**Lab** `a-counting`**:**
 
 - [ ] Find the majority element with a map, then with Boyer-Moore voting.
 - [ ] Return the top `k` most frequent elements by sorting the counts.
@@ -661,7 +661,7 @@ Directory: `phase-3/3-6-frequency/`
 
 Directory: `phase-3/3-7-recognition/`
 
-**Lab `a-classify`:** For 12 unseen problem statements from the instructor, before writing any code:
+**Lab** `a-classify`**:** For 12 unseen problem statements from the instructor, before writing any code:
 
 - [ ] Name the pattern you would use, or say that you would start with brute force.
 - [ ] Give the brute-force complexity and the target complexity.
@@ -694,7 +694,7 @@ Directory: `phase-3/exit/`
 
 Directory: `phase-4/4-1-recursion/`
 
-**Lab `a-recursion-basics`:**
+**Lab** `a-recursion-basics`**:**
 
 - [ ] Sum a slice recursively.
 - [ ] Compute `x^n` with fast exponentiation in O(log n) multiplications.
@@ -717,13 +717,13 @@ Directory: `phase-4/4-1-recursion/`
 
 Directory: `phase-4/4-2-trees/`
 
-**Lab `a-traversals`:**
+**Lab** `a-traversals`**:**
 
 - [ ] Define a `TreeNode` and a test helper that builds a tree from a level-order slice with `nil` markers.
 - [ ] Preorder, inorder, and postorder traversal, both recursive and iterative with an explicit stack.
 - [ ] Level-order traversal with a queue, returning one slice per level.
 
-**Lab `b-tree-properties`:**
+**Lab** `b-tree-properties`**:**
 
 - [ ] Maximum depth.
 - [ ] Invert a tree.
@@ -742,7 +742,7 @@ Directory: `phase-4/4-2-trees/`
 
 Directory: `phase-4/4-3-tree-state/`
 
-**Lab `a-tree-state`:**
+**Lab** `a-tree-state`**:**
 
 - [ ] Path sum: does any root-to-leaf path add up to a target?
 - [ ] Diameter of a binary tree.
@@ -761,7 +761,7 @@ Directory: `phase-4/4-3-tree-state/`
 
 Directory: `phase-4/4-4-bst/`
 
-**Lab `a-bst-ops`:**
+**Lab** `a-bst-ops`**:**
 
 - [ ] Insert and search.
 - [ ] Delete, covering a leaf, one child, and two children.
@@ -782,11 +782,11 @@ Directory: `phase-4/4-4-bst/`
 
 Directory: `phase-4/4-5-heaps/`
 
-**Lab `a-binary-heap`:**
+**Lab** `a-binary-heap`**:**
 
 - [ ] Implement a binary min-heap on a slice: push, pop, peek, and heapify.
 
-**Lab `b-container-heap`:**
+**Lab** `b-container-heap`**:**
 
 - [ ] Find the `k`th largest element using `container/heap`.
 - [ ] Find the top `k` frequent elements with a heap, revisiting 3.6.
@@ -804,7 +804,7 @@ Directory: `phase-4/4-5-heaps/`
 
 Directory: `phase-4/4-6-graphs/`
 
-**Lab `a-representations`:**
+**Lab** `a-representations`**:**
 
 - [ ] Build an adjacency list from an edge list, directed and undirected.
 - [ ] Build an adjacency matrix from the same edges.
@@ -824,7 +824,7 @@ Directory: `phase-4/4-6-graphs/`
 
 Directory: `phase-4/4-7-dfs/`
 
-**Lab `a-dfs`:**
+**Lab** `a-dfs`**:**
 
 - [ ] Reachability, recursive and iterative.
 - [ ] Count connected components.
@@ -843,7 +843,7 @@ Directory: `phase-4/4-7-dfs/`
 
 Directory: `phase-4/4-8-bfs/`
 
-**Lab `a-bfs`:**
+**Lab** `a-bfs`**:**
 
 - [ ] Shortest path in an unweighted graph, returning the distance and the reconstructed path.
 - [ ] Multi-source BFS: the time for rot to spread through a grid of oranges.
@@ -861,7 +861,7 @@ Directory: `phase-4/4-8-bfs/`
 
 Directory: `phase-4/4-9-topological-sort/`
 
-**Lab `a-topo`:**
+**Lab** `a-topo`**:**
 
 - [ ] Kahn's algorithm, returning an order and an `ok` flag that is false when there is a cycle.
 - [ ] A DFS version using three colors.
@@ -881,7 +881,7 @@ Directory: `phase-4/4-9-topological-sort/`
 
 Directory: `phase-4/4-10-union-find/`
 
-**Lab `a-union-find`:**
+**Lab** `a-union-find`**:**
 
 - [ ] Implement find and union with path compression and union by size.
 - [ ] Count provinces from an adjacency matrix.
@@ -919,13 +919,13 @@ Dynamic programming spans four lessons and a transfer check. Do not advance past
 
 Directory: `phase-5/5-1-backtracking/`
 
-**Lab `a-enumerate`:**
+**Lab** `a-enumerate`**:**
 
 - [ ] Subsets.
 - [ ] Permutations, including input with duplicates and no repeated permutations in the output.
 - [ ] Combination sum.
 
-**Lab `b-constrained-search`:**
+**Lab** `b-constrained-search`**:**
 
 - [ ] N-Queens: count the solutions.
 - [ ] Word search in a grid.
@@ -942,13 +942,13 @@ Directory: `phase-5/5-1-backtracking/`
 
 Directory: `phase-5/5-2-greedy/`
 
-**Lab `a-greedy`:**
+**Lab** `a-greedy`**:**
 
 - [ ] Maximum number of non-overlapping intervals.
 - [ ] Jump game: can you reach the end?
 - [ ] Gas station: find the starting index.
 
-**Lab `b-counterexample`:**
+**Lab** `b-counterexample`**:**
 
 - [ ] Show that greedy coin change fails for coins `{1, 3, 4}` and target `6`, with a test against a brute-force version.
 
@@ -964,7 +964,7 @@ Directory: `phase-5/5-2-greedy/`
 
 Directory: `phase-5/5-3-dp-memo/`
 
-**Lab `a-memo`:**
+**Lab** `a-memo`**:**
 
 - [ ] Climbing stairs.
 - [ ] Fibonacci with memoization, comparing call counts against the naive version from 4.1.
@@ -985,7 +985,7 @@ Directory: `phase-5/5-3-dp-memo/`
 
 Directory: `phase-5/5-4-dp-table/`
 
-**Lab `a-bottom-up`:**
+**Lab** `a-bottom-up`**:**
 
 - [ ] Convert house robber and coin change from 5.3 to bottom-up.
 - [ ] Reduce house robber to O(1) space.
@@ -1004,7 +1004,7 @@ Directory: `phase-5/5-4-dp-table/`
 
 Directory: `phase-5/5-5-dp-2d/`
 
-**Lab `a-grid-strings`:**
+**Lab** `a-grid-strings`**:**
 
 - [ ] Unique paths in a grid with obstacles.
 - [ ] Longest common subsequence, returning the subsequence itself as well as its length.
@@ -1023,7 +1023,7 @@ Directory: `phase-5/5-5-dp-2d/`
 
 Directory: `phase-5/5-6-dp-transfer/`
 
-**Lab `a-unseen-dp`:** Three unseen DP problems from the instructor.
+**Lab** `a-unseen-dp`**:** Three unseen DP problems from the instructor.
 
 - [ ] For each, write the state, recurrence, and base cases before coding.
 - [ ] Implement each with tests.
@@ -1038,7 +1038,7 @@ Directory: `phase-5/5-6-dp-transfer/`
 
 Directory: `phase-5/5-7-monotonic-stack/`
 
-**Lab `a-monotonic-stack`:**
+**Lab** `a-monotonic-stack`**:**
 
 - [ ] Next greater element.
 - [ ] Daily temperatures.
@@ -1056,7 +1056,7 @@ Directory: `phase-5/5-7-monotonic-stack/`
 
 Directory: `phase-5/5-8-monotonic-deque/`
 
-**Lab `a-window-max`:**
+**Lab** `a-window-max`**:**
 
 - [ ] Sliding window maximum.
 
@@ -1072,7 +1072,7 @@ Directory: `phase-5/5-8-monotonic-deque/`
 
 Directory: `phase-5/5-9-tries/`
 
-**Lab `a-trie`:**
+**Lab** `a-trie`**:**
 
 - [ ] Insert, search, and starts-with.
 - [ ] Delete a word, pruning nodes that are no longer needed.
@@ -1112,7 +1112,7 @@ Every task in this phase is scored with the interview rubric unless it says othe
 
 Directory: `phase-6/6-1-calibration/`
 
-**Lab `a-self-score`:**
+**Lab** `a-self-score`**:**
 
 - [ ] Pick two of your earlier solutions and score each against the interview rubric.
 - [ ] Compare your scores with the instructor's.
@@ -1127,7 +1127,7 @@ Directory: `phase-6/6-1-calibration/`
 
 Directory: `phase-6/6-2-verbal/`
 
-**Lab `a-walkthrough`:** For three unseen problems, work through the before-coding checklist out loud or as a written transcript before writing code:
+**Lab** `a-walkthrough`**:** For three unseen problems, work through the before-coding checklist out loud or as a written transcript before writing code:
 
 - [ ] Restate the problem and ask clarifying questions.
 - [ ] Work a small example by hand.
@@ -1144,7 +1144,7 @@ Directory: `phase-6/6-2-verbal/`
 
 Directory: `phase-6/6-3-timed-easy/`
 
-**Lab `a-easy`:**
+**Lab** `a-easy`**:**
 
 - [ ] Solve three unseen easy problems, 20 minutes each.
 
@@ -1158,7 +1158,7 @@ Directory: `phase-6/6-3-timed-easy/`
 
 Directory: `phase-6/6-4-timed-medium/`
 
-**Lab `a-medium`:**
+**Lab** `a-medium`**:**
 
 - [ ] Solve four unseen medium problems, 40 minutes each.
 
@@ -1172,7 +1172,7 @@ Directory: `phase-6/6-4-timed-medium/`
 
 Directory: `phase-6/6-5-follow-ups/`
 
-**Lab `a-follow-ups`:** After each of four solved problems, the instructor asks a follow-up: a larger input, a streaming input, less memory, or a changed constraint.
+**Lab** `a-follow-ups`**:** After each of four solved problems, the instructor asks a follow-up: a larger input, a streaming input, less memory, or a changed constraint.
 
 - [ ] Adapt the solution, or describe a correct alternative with its complexity.
 - [ ] Say plainly when you would describe a solution rather than code it fully.
@@ -1187,7 +1187,7 @@ Directory: `phase-6/6-5-follow-ups/`
 
 Directory: `phase-6/6-6-go-fluency/`
 
-**Lab `a-from-memory`:** In 15 minutes, with no documentation, write:
+**Lab** `a-from-memory`**:** In 15 minutes, with no documentation, write:
 
 - [ ] A `container/heap` implementation and its use.
 - [ ] A sort with a custom multi-key comparator.
@@ -1205,7 +1205,7 @@ Directory: `phase-6/6-6-go-fluency/`
 
 Directory: `phase-6/6-7-mistakes/`
 
-**Lab `a-review`:**
+**Lab** `a-review`**:**
 
 - [ ] Confirm every entry in `mistakes.md` has the problem, category, fix, and remediation drill.
 - [ ] Re-solve the three oldest unresolved problems from an empty directory.
@@ -1220,7 +1220,7 @@ Directory: `phase-6/6-7-mistakes/`
 
 Directory: `phase-6/6-8-mocks/`
 
-**Lab `a-mocks`:** Full 45-minute mocks, each with one medium problem or two easy problems, plus follow-ups.
+**Lab** `a-mocks`**:** Full 45-minute mocks, each with one medium problem or two easy problems, plus follow-ups.
 
 - [ ] Complete at least four mocks.
 - [ ] Record the rubric score for each in the lab's `notes.md`.
