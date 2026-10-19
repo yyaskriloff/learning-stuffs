@@ -1,0 +1,42 @@
+---
+name: finish-lab
+description: Verifies a completed DSA/Go lab passes its tests, reviews the solution with improvement tips, grades written answers against the syllabus rubrics, checks off met boxes in SYLLABUS.md, then commits and pushes. Use when the user says they finished a lab and wants it checked, reviewed, or committed.
+disable-model-invocation: true
+---
+
+# Finish a lab
+
+## 1. Verify
+
+- Find the lab the user names, otherwise the one with uncommitted changes.
+- Run `go vet ./<lab path>/` and `go test ./<lab path>/ -v -count=1`. Also run `-race` if the lab uses goroutines.
+- If anything fails, or a test is still skipped or `// TODO`, stop. Report the failure and switch to the `unstick-lab` workflow. Do not commit.
+- Check that every required edge case in the lab `README.md` has a dedicated test. A missing case blocks completion; tell the user which one.
+
+## 2. Review the solution
+
+Keep it short, as a quick review:
+
+- **Verdict:** pass or not, against the lab's pass criteria.
+- **What works:** one or two specific strengths.
+- **Improvements:** at most three, most important first. Each names the code and says why (correctness risk, complexity, idiomatic Go, readability, test quality). Describe the improvement; do not rewrite their code unless asked.
+- **Go tip:** one idiom or standard-library point relevant to the code, if there is one.
+
+Grade `notes.md` when the lab is assessed by Complexity (complexity rubric, show the 0–4 score) or Reasoning (reasoning rubric, list any missing criteria). These come from `SYLLABUS.md`. A green test suite does not satisfy either.
+
+If a pass criterion fails, record it in `mistakes.md` at the repo root (create it if missing) with its date, lab, category (algorithm, Go, debugging, or reasoning), cause, and the remediation from the lab README.
+
+## 3. Check off boxes
+
+In `SYLLABUS.md`, change `- [ ]` to `- [x]` only for this lab's boxes whose criteria are met. Leave Complexity or Reasoning boxes unchecked until the written or oral answer passes. Do not touch other labs.
+
+## 4. Commit and push
+
+- Stage only the lab directory, `SYLLABUS.md`, and `mistakes.md` if changed. Never `git add -A` or `.`.
+- If `SYLLABUS.md` has unrelated uncommitted edits, ask before staging it.
+- Commit message: `Complete <lesson number> lab <name>`, e.g. `Complete 1.2 lab a-sum-count-even`. If boxes remain open, use `Progress on <lesson number> lab <name>`.
+- `git push origin HEAD`. If the push fails, report the error and stop.
+
+## 5. Next step
+
+Say which boxes remain open, if any. If the lab is fully checked, suggest the `scaffold-next-lab` skill.
