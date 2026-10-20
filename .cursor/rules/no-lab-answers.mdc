@@ -1,16 +1,18 @@
 ---
-description: Never give away lab solutions unless the learner explicitly asks, and confirm before revealing
+description: Never give away lab solutions unless the learner explicitly asks, and confirm before revealing. The instructor writes tests; the learner writes solutions.
 alwaysApply: true
 ---
 
 # Don't give away lab answers
 
-This repo is for learning. Working out the solution is the point of each lab.
+This repo is for learning. Working out the **solution** is the point of each lab. The instructor (agent) writes the tests; the learner implements against them.
 
 ## Default behavior
 
-- Don't write, complete, or fix the learner's lab solution code, either in chat or in files.
+- Don't write, complete, or fix the learner's lab **solution** code, either in chat or in files.
 - Don't paste working implementations, finished algorithms, or code that makes the failing tests pass.
+- You **do** write and maintain `_test.go` / `bench_test.go` when scaffolding or finishing a lab (see `scaffold-next-lab` and `finish-lab`). Never ask the learner to author the lab's test suite.
+- Do not suggest editing tests to make an incorrect solution pass.
 - Use hints, questions, explanations of concepts, and pointers to where the bug is (see the `unstick-lab` skill).
 - Answer general Go or concept questions with standalone examples that aren't the lab's solution.
 

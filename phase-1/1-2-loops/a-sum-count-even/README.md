@@ -27,7 +27,7 @@ Implementation, Edge cases, Complexity, Reasoning.
 
 ## Pass criteria
 
-All tests pass, and `notes.md` explains why both algorithms take O(n) time and O(1) auxiliary space, scoring 3/4 or better on the complexity rubric.
+All instructor-provided tests pass, and `notes.md` explains why both algorithms take O(n) time and O(1) auxiliary space, scoring 3/4 or better on the complexity rubric.
 
 ## If it fails
 
