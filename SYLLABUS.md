@@ -164,11 +164,11 @@ Directory: `phase-1/1-3-time-complexity/`
 
 **Lab** `a-snippets`**:** Analyze short snippets containing:
 
-- [ ] A single loop.
-- [ ] Nested loops.
-- [ ] Two consecutive loops.
-- [ ] A loop that halves its input each iteration.
-- [ ] A loop whose number of iterations depends on a nested condition.
+- [x] A single loop.
+- [x] Nested loops.
+- [x] Two consecutive loops.
+- [x] A loop that halves its input each iteration.
+- [x] A loop whose number of iterations depends on a nested condition.
 
 **Deliverable:** a written answer in `notes.md` for each snippet that identifies the dominant operation and the time complexity.
 
