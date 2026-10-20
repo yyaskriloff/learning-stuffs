@@ -62,8 +62,11 @@ func TestDivideByZero(t *testing.T) {
 }
 
 func TestDivideMinIntByMinusOne(t *testing.T) {
-	t.Skip("decide the contract for math.MinInt / -1, document it on Divide, then ask the instructor to complete this case")
-
-	// Placeholder so the case stays visible after the skip is removed.
-	_, _ = divide.Divide(math.MinInt, -1)
+	got, err := divide.Divide(math.MinInt, -1)
+	if !errors.Is(err, divide.ErrIntOverflow) {
+		t.Fatalf("Divide(math.MinInt, -1) error = %v; want errors.Is(..., ErrIntOverflow)", err)
+	}
+	if got != 0 {
+		t.Errorf("Divide(math.MinInt, -1) = %d; want 0 on error", got)
+	}
 }

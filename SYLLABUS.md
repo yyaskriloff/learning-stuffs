@@ -203,11 +203,11 @@ Directory: `phase-1/1-5-errors/`
 
 **Lab** `a-divide`**:** Implement integer division that reports division by zero through an error.
 
-- [ ] Define the function signature.
-- [ ] Implement the normal case.
-- [ ] Return an appropriate error for a zero divisor.
-- [ ] Make the provided tests pass for both success and failure outcomes.
-- [ ] Explain why a function contract should make invalid inputs and failure behavior explicit.
+- [x] Define the function signature.
+- [x] Implement the normal case.
+- [x] Return an appropriate error for a zero divisor.
+- [x] Make the provided tests pass for both success and failure outcomes.
+- [x] Explain why a function contract should make invalid inputs and failure behavior explicit.
 
 **Required edge cases:** zero divisor, zero dividend, negative operands, the truncation direction for negative results, and `math.MinInt` divided by `-1`. For the last case, decide the contract and document it.
 
