@@ -152,15 +152,15 @@ Every checkbox uses one or more of these assessment types. The lab states which 
 | Implementation | Automated tests verify outputs and behavior. |
 | Edge cases | Dedicated tests verify boundary conditions. |
 | Algorithm correctness | Property-based or randomized tests where appropriate. |
-| Complexity | Written analysis, benchmark experiments where useful, and a grading rubric. |
-| Reasoning | A concrete written or oral response evaluated against explicit criteria. |
+| Complexity | Oral explanation in chat, benchmark experiments where useful, and a grading rubric. |
+| Reasoning | A concrete oral response in chat evaluated against explicit criteria. |
 | Interview simulation | Timed task scored against a defined rubric. |
 
 ### What every checkbox includes
 
 1. **A specific task and deliverable.** What I build or produce, and where it lives.
 2. **A clear definition of done.** The observable result that finishes the lab.
-3. **A test plan or assessment rubric.** The automated tests, the written criteria, or both.
+3. **A test plan or assessment rubric.** The automated tests, the oral criteria, or both.
 4. **Required edge cases.** The boundary conditions the lab must cover.
 5. **A rule for passing or failing.** What must pass, and what a failure means.
 6. **A remediation path if it fails.** The next drill or earlier lab to repeat before I retry.

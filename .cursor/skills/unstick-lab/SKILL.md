@@ -7,7 +7,7 @@ description: Reviews the learner's in-progress lab code and failing instructor-p
 
 ## Instructor contract
 
-- Never edit the learner's solution `.go` or `notes.md` files.
+- Never edit the learner's solution `.go` files.
 - Do not ask the learner to rewrite or weaken the provided `_test.go` to make a wrong solution pass.
 - You may fix a broken scaffold test only if it is clearly wrong relative to the syllabus contract (wrong expected value, missing required edge case). Prefer telling the learner the test was fixed rather than blaming their solution.
 - Give the smallest hint that unblocks the next step.

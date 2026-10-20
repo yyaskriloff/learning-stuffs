@@ -1,6 +1,6 @@
 ---
 name: scaffold-next-lab
-description: Finds the next incomplete lab in SYLLABUS.md, creates its directory with README, stubs, instructor-written tests, and notes, verifies the expected failing state, then commits and pushes. Use when the user asks to set up the next lab, sublesson, or lesson.
+description: Finds the next incomplete lab in SYLLABUS.md, creates its directory with README, stubs, and instructor-written tests, verifies the expected failing state, then commits and pushes. Use when the user asks to set up the next lab, sublesson, or lesson.
 disable-model-invocation: true
 ---
 
@@ -21,9 +21,9 @@ The learner writes every **solution**. This skill builds the lab **and writes th
 | Lab kind | Signal | What to generate |
 | --- | --- | --- |
 | Implementation | Named functions to implement | Stub `.go` + **full** black-box `_test.go` covering required edge cases |
-| Demonstration / prediction | Learner predicts behavior then confirms (e.g. 1.6 `b-aliasing`) | Full demonstration `_test.go` + `notes.md` prompts for predictions; no solution code required beyond what the syllabus asks |
+| Demonstration / prediction | Learner predicts behavior then confirms (e.g. 1.6 `b-aliasing`) | Full demonstration `_test.go`; README prompts the learner to predict orally before running; no solution code required beyond what the syllabus asks |
 | Debugging | Faulty code to fix (e.g. 1.7 `a-faulty`) | Deliberately faulty `.go` + **full failing** `_test.go` (regression + boundary cases) |
-| Written | Deliverable is `notes.md` only (e.g. 1.3, 1.4) | Prompts/snippets in `README.md` + empty `notes.md` sections; tests only if the syllabus needs runnable snippets |
+| Oral / analysis | Deliverable is an oral explanation only (e.g. 1.3, 1.4) | Prompts/snippets in `README.md`; tests only if the syllabus needs runnable snippets |
 
 Never leave `_test.go` as a TODO skeleton for the learner to fill in. The instructor owns the tests.
 
@@ -67,14 +67,12 @@ For lab 1.7 `a-faulty`: write the deliberately faulty implementation with one su
 - Where the learner must choose a contract (e.g. empty-slice result, `math.MinInt / -1`), leave that case as a `t.Skip("decide the contract, then ask the instructor to complete this case")`. Do **not** ask the learner to write the test.
 - Add `bench_test.go` only when the lab asks for a benchmark. Prefer a runnable benchmark harness the learner only runs; a skeleton is acceptable if sizes are listed.
 
-**`notes.md`** — one heading per Complexity or Reasoning item, empty under each heading. For prediction labs, include headings for each prediction the syllabus requires.
-
-Never write a working implementation (except the intentional fault in debugging labs), an answer key, or completed `notes.md` content.
+Never write a working implementation (except the intentional fault in debugging labs) or an answer key. Do not create a `notes.md` file.
 
 ## 4. Verify the expected state
 
 - If no `go.mod` exists at the repo root and this is lab 1.1, leave module creation to the learner (it is a checkbox). Skip the test run and say so.
-- Otherwise run `go vet ./<lab path>/` (must pass) and `go test ./<lab path>/` (must fail with `unimplemented`, or fail on the planted bug for debugging labs, or pass with skips only for open-contract cases / written labs with no code). A compile error means the scaffold is broken: fix the scaffold, not by weakening the tests.
+- Otherwise run `go vet ./<lab path>/` (must pass) and `go test ./<lab path>/` (must fail with `unimplemented`, or fail on the planted bug for debugging labs, or pass with skips only for open-contract cases / oral labs with no code). A compile error means the scaffold is broken: fix the scaffold, not by weakening the tests.
 
 ## 5. Commit and push
 
@@ -84,4 +82,4 @@ Never write a working implementation (except the intentional fault in debugging 
 
 ## 6. Report
 
-Tell the user the lab path, that the tests are already written, what they need to implement, the test command, and suggest starting with the `teach-concept` skill.
+Tell the user the lab path, that the tests are already written, what they need to implement, the test command, and suggest starting with the `teach-concept` skill. If the lab is assessed by Complexity or Reasoning, remind them those are oral checks in chat after the tests pass.

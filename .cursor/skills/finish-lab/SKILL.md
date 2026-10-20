@@ -1,6 +1,6 @@
 ---
 name: finish-lab
-description: Verifies a completed DSA/Go lab passes its instructor-provided tests, reviews the solution with improvement tips, grades written answers against the syllabus rubrics, checks off met boxes in SYLLABUS.md, then commits and pushes. Use when the user says they finished a lab and wants it checked, reviewed, or committed.
+description: Verifies a completed DSA/Go lab passes its instructor-provided tests, reviews the solution with improvement tips, grades oral Complexity/Reasoning answers against the syllabus rubrics, checks off met boxes in SYLLABUS.md, then commits and pushes. Use when the user says they finished a lab and wants it checked, reviewed, or committed.
 disable-model-invocation: true
 ---
 
@@ -13,7 +13,7 @@ disable-model-invocation: true
 - If the learner documented an open contract and matching cases are still `t.Skip`, **complete those tests** to match the documented contract, then re-run.
 - Run `go vet ./<lab path>/` and `go test ./<lab path>/ -v -count=1`. Also run `-race` if the lab uses goroutines.
 - If anything fails, or a test is still skipped for an undocumented contract, stop. Report the failure and switch to the `unstick-lab` workflow. Do not commit.
-- Do not treat "learner didn't write tests" as a failure. The learner's deliverable is the implementation and any required `notes.md`.
+- Do not treat "learner didn't write tests" as a failure. The learner's deliverable is the implementation (and oral Complexity/Reasoning answers when the lab requires them). Do not require or create a `notes.md`.
 
 ## 2. Review the solution
 
@@ -24,13 +24,13 @@ Keep it short, as a quick review:
 - **Improvements:** at most three, most important first. Each names the code and says why (correctness risk, complexity, idiomatic Go, readability). Describe the improvement; do not rewrite their solution unless asked. Do not critique the learner for not authoring the test file.
 - **Go tip:** one idiom or standard-library point relevant to the code, if there is one.
 
-Grade `notes.md` when the lab is assessed by Complexity (complexity rubric, show the 0–4 score) or Reasoning (reasoning rubric, list any missing criteria). These come from `SYLLABUS.md`. A green test suite does not satisfy either.
+When the lab is assessed by Complexity or Reasoning, grade those orally in chat (complexity rubric 0–4; reasoning rubric criteria). Do not ask for a written `notes.md`. A green test suite does not satisfy either on its own — quiz the learner if they have not already explained in this session.
 
 If a pass criterion fails, record it in `mistakes.md` at the repo root (create it if missing) with its date, lab, category (algorithm, Go, debugging, or reasoning), cause, and the remediation from the lab README.
 
 ## 3. Check off boxes
 
-In `SYLLABUS.md`, change `- [ ]` to `- [x]` only for this lab's boxes whose criteria are met. Leave Complexity or Reasoning boxes unchecked until the written or oral answer passes. Do not touch other labs.
+In `SYLLABUS.md`, change `- [ ]` to `- [x]` only for this lab's boxes whose criteria are met. Leave Complexity or Reasoning boxes unchecked until the oral answer passes. Do not touch other labs.
 
 ## 4. Commit and push
 
