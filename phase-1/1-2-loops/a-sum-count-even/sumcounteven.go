@@ -4,7 +4,7 @@ package sumcounteven
 func Sum(nums []int) int {
 	total := 0
 
-	if len(nums) == 0 || nums == nil {
+	if len(nums) == 0 {
 		return total
 	}
 
@@ -17,18 +17,18 @@ func Sum(nums []int) int {
 
 // CountEven returns how many elements in nums are even.
 func CountEven(nums []int) int {
-	total := 0
+	count := 0
 
-	if len(nums) == 0 || nums == nil {
-		return total
+	if len(nums) == 0 {
+		return count
 	}
 
 	for _, num := range nums {
 		if num%2 == 0 {
-			total++
+			count++
 		}
 	}
 
-	return total
+	return count
 
 }
