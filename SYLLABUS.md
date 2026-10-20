@@ -184,10 +184,10 @@ Directory: `phase-1/1-4-auxiliary-space/`
 
 **Lab** `a-classify`**:** Classify the memory usage of algorithms that:
 
-- [ ] Use a fixed number of variables.
-- [ ] Allocate a slice proportional to input size.
-- [ ] Build a map from the input.
-- [ ] Use recursion with input-dependent depth.
+- [x] Use a fixed number of variables.
+- [x] Allocate a slice proportional to input size.
+- [x] Build a map from the input.
+- [x] Use recursion with input-dependent depth.
 
 **Deliverable:** explain in `notes.md` why auxiliary space differs from the total memory occupied by the input and output.
 
