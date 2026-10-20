@@ -14,7 +14,7 @@ description: Teaches the concept behind the current DSA/Go lab, then checks unde
 
 ## Workflow
 
-1. **Locate the lab.** Use the lab the user names, otherwise the first lab in `SYLLABUS.md` with an unchecked box. Read its `README.md` if it exists. Do not open or edit the learner's `.go` file.
+1. **Locate the lab.** Use the lab the user names, otherwise the first lab in `SYLLABUS.md` with an unchecked box. Read its `README.md` if it exists. Do not open or edit the learner's solution `.go` file. You may read the provided `_test.go` to name required edge cases, but do not ask the learner to write tests.
 2. **Explain briefly.** What the concept is, why it matters for this lab, and the Go feature it relies on (slices, maps, errors, etc.). Keep it to a few short paragraphs.
 3. **One worked example** on a problem that is *not* the lab problem. Trace state step by step.
 4. **Check understanding.** Ask one question at a time and wait for the answer. Cover, in order, what applies to the lab:

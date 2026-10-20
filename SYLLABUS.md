@@ -19,7 +19,7 @@ Every lesson lists the following:
 | Lab | The task and its deliverable |
 | Checkboxes | The individual verifiable steps |
 | Contract | Behavior you must decide and document before coding, when the problem leaves it open |
-| Required edge cases | Boundary conditions that need dedicated tests |
+| Required edge cases | Boundary conditions the instructor's tests must cover |
 | Assessed by | Which assessment types apply (see below) |
 | Pass criteria | The definition of done and the pass/fail rule |
 | If it fails | The remediation path before you retry |
@@ -43,9 +43,9 @@ Each lab directory is self-contained:
 
 - `README.md`: the lab's task, contract, edge cases, pass criteria, and remediation, copied from this file.
 - `<name>.go`: your implementation. Use one Go package per lab.
-- `<name>_test.go`: table-driven tests, edge-case tests, and property or randomized tests where the lab asks for them.
+- `<name>_test.go`: provided by the instructor (the agent). Table-driven tests, edge-case tests, and property or randomized tests where the lab requires them. Do not rewrite these to make a failing solution look correct.
 - `notes.md`: written answers for complexity and reasoning items.
-- `bench_test.go`: only when the lab asks for a benchmark.
+- `bench_test.go`: only when the lab asks for a benchmark; the instructor provides the skeleton or full benchmark.
 
 Labs never import other labs. If a later lab needs an earlier helper, such as a tree builder, copy it in. That keeps each lab independently runnable and keeps the old work unchanged.
 
@@ -53,9 +53,11 @@ The repository has one Go module at the root, created in lesson 1.1. `go test ./
 
 ### Who writes which tests
 
-- **You** write the implementation and its tests in every lab.
-- **The instructor** may add review tests after you finish. A lab whose code fails a review test is not passed.
+- **The instructor (agent)** writes the tests for every lab when the lab is scaffolded: normal cases, required edge cases, and property or randomized checks where the syllabus asks for them.
+- **You** write the implementation (and `notes.md` answers) that satisfy those tests. Your job is the solution, not the test suite.
+- When a lab leaves a contract open (for example empty-input return values), document your decision in a doc comment or `notes.md`. The instructor then completes any skipped contract tests to match that decision before the lab can pass.
 - **Exit assessments** use unseen problems and tests that the instructor provides. Those go in the phase's `exit/` directory.
+- A lab whose code fails its tests is not passed. Do not edit the test files to hide failures.
 
 ### Assessment types
 
@@ -117,24 +119,24 @@ Every phase exit includes a retest of a lab from an earlier phase, at least one 
 
 ## Phase 1 — Foundations
 
-**Goal:** become comfortable writing tested Go code and reasoning about algorithmic cost.
+**Goal:** become comfortable writing Go solutions that satisfy provided tests and reasoning about algorithmic cost.
 
 ### 1.1 — Set up Go and the test workflow
 
 Directory: `phase-1/1-1-setup/`
 
-**Lab** `a-add`**:** Create the repository and initialize a Go module. Implement `Add(a, b int) int` with table-driven tests.
+**Lab** `a-add`**:** Create the repository and initialize a Go module. Implement `Add(a, b int) int` so the instructor-provided table-driven tests pass.
 
 - [x] Create the module and make `go test ./...` run successfully.
-- [x] Add tests for positive, negative, and zero values.
-- [x] Intentionally introduce a bug, confirm the test fails, and diagnose why.
-- [x] Fix the bug and confirm the test passes again.
+- [x] Implement `Add` so the provided tests for positive, negative, and zero values pass.
+- [x] Intentionally introduce a bug in the implementation, confirm a provided test fails, and diagnose why.
+- [x] Fix the bug and confirm the tests pass again.
 
 **Required edge cases:** zero plus zero, mixed signs, both negative.
 
 **Assessed by:** Implementation, Edge cases, Reasoning.
 
-**Pass criteria:** the module builds, the regression is demonstrated, and you can explain the difference between a test failure and a compilation failure.
+**Pass criteria:** the module builds, the regression against the provided tests is demonstrated, and you can explain the difference between a test failure and a compilation failure.
 
 **If it fails:** read the `go help test` and `go help testflag` summaries, rerun the test with `-v` and `-run`, then redo the bug-introduction step with a different bug.
 
@@ -204,7 +206,7 @@ Directory: `phase-1/1-5-errors/`
 - [ ] Define the function signature.
 - [ ] Implement the normal case.
 - [ ] Return an appropriate error for a zero divisor.
-- [ ] Test both outcomes.
+- [ ] Make the provided tests pass for both success and failure outcomes.
 - [ ] Explain why a function contract should make invalid inputs and failure behavior explicit.
 
 **Required edge cases:** zero divisor, zero dividend, negative operands, the truncation direction for negative results, and `math.MinInt` divided by `-1`. For the last case, decide the contract and document it.
@@ -224,35 +226,37 @@ Directory: `phase-1/1-6-slices/`
 - [ ] Reverse a slice in place.
 - [ ] Filter a slice into a new result without changing the input.
 
-**Lab** `b-aliasing`**:** Write tests that demonstrate:
+**Lab** `b-aliasing`**:** The instructor provides demonstration tests. Before running them, predict in `notes.md`:
 
-- [ ] How `len` and `cap` differ.
+- [ ] How `len` and `cap` differ in the given examples.
 - [ ] How `append` may reuse or replace a backing array.
 - [ ] How slice aliasing can make one function affect another variable.
+
+Then run the provided tests and reconcile any wrong predictions.
 
 **Required edge cases:** empty slices, single elements, duplicates, and mutation checks that assert the filter input is unchanged.
 
 **Assessed by:** Implementation, Edge cases, Reasoning.
 
-**Pass criteria:** you predict which slices share underlying storage in several small examples. Predict first in writing, then confirm with a test.
+**Pass criteria:** you predict which slices share underlying storage in several small examples. Predict first in writing, then confirm by running the provided tests.
 
 **If it fails:** draw the slice header (pointer, length, capacity) for every variable in the failed example, then retry with new examples.
 
-### 1.7 — Test design and debugging
+### 1.7 — Debugging against failing tests
 
 Directory: `phase-1/1-7-debugging/`
 
-**Lab** `a-faulty`**:** Take a deliberately faulty implementation of a simple algorithm. The instructor supplies it.
+**Lab** `a-faulty`**:** Take a deliberately faulty implementation of a simple algorithm. The instructor supplies both the faulty code and a failing test suite (including regression and boundary cases).
 
-- [ ] Reproduce the bug with a failing test.
-- [ ] Identify the smallest useful failing input.
-- [ ] Fix the underlying defect.
-- [ ] Keep the regression test.
-- [ ] Add at least two boundary tests.
+- [ ] Run the provided tests and reproduce the failure.
+- [ ] Identify the smallest useful failing input from the test output.
+- [ ] Fix the underlying defect in the implementation.
+- [ ] Confirm the provided regression and boundary tests pass.
+- [ ] Explain why the original implementation failed and why those tests catch the regression.
 
 **Assessed by:** Implementation, Edge cases, Reasoning.
 
-**Pass criteria:** explain why the original implementation failed and why the new test would catch the regression.
+**Pass criteria:** explain why the original implementation failed and why the provided tests would catch the regression.
 
 **If it fails:** write your hypothesis before each edit, change one thing at a time, and retry on a second faulty implementation.
 
@@ -272,9 +276,9 @@ Directory: `phase-1/1-8-contracts/`
 
 **Assessed by:** Implementation, Edge cases, Complexity.
 
-**Pass criteria:** tests cover every required edge case, and complexity is documented for each function.
+**Pass criteria:** the provided tests cover every required edge case, your implementation passes them, and complexity is documented for each function.
 
-**If it fails:** write the contract as a doc comment before the code, then rewrite the tests from the contract alone.
+**If it fails:** write the contract as a doc comment before the code, then fix the implementation to match that contract (and any completed contract tests).
 
 ### 1.9 — Brute force versus improvement
 
@@ -282,17 +286,17 @@ Directory: `phase-1/1-9-brute-force/`
 
 **Lab** `a-duplicates`**:** Implement duplicate detection twice: once with pairwise comparisons and once with a map.
 
-- [ ] Test both implementations on the same inputs.
-- [ ] Compare their results on generated random inputs.
-- [ ] Benchmark both at several input sizes.
+- [ ] Make both implementations pass the same provided test inputs.
+- [ ] Pass the provided randomized comparison between the two implementations.
+- [ ] Run the provided benchmarks at several input sizes.
 - [ ] Explain the time and space trade-offs.
 - [ ] Identify when the simpler solution may be preferable.
 
 **Assessed by:** Implementation, Algorithm correctness, Complexity, Reasoning.
 
-**Pass criteria:** both implementations agree across your test set and the random inputs, and you can explain why their complexity differs.
+**Pass criteria:** both implementations agree across the provided fixed and random inputs, and you can explain why their complexity differs.
 
-**If it fails:** if the implementations disagree, shrink the random failing input by hand to the smallest one that still fails, and add it as a fixed test case.
+**If it fails:** if the implementations disagree, shrink the random failing input by hand to the smallest one that still fails, and ask the instructor to add it as a fixed test case.
 
 ### Phase 1 exit assessment
 
@@ -300,7 +304,7 @@ Directory: `phase-1/exit/`
 
 - [ ] Solve three unseen beginner problems, each passing the instructor's tests.
 - [ ] Score at least 8/10 on a complexity quiz.
-- [ ] Explain a bug and the regression test that prevents it from returning.
+- [ ] Explain a bug and how the provided regression test prevents it from returning.
 - [ ] Pass a fresh slice-mutation exercise.
 
 **If it fails:** repeat the lesson that matches the missed item (1.3 or 1.4 for complexity, 1.6 for slices, 1.7 for debugging), then retake that item with a new problem.
@@ -330,7 +334,7 @@ Directory: `phase-2/2-1-arrays/`
 
 **Pass criteria:** all tests pass, and `notes.md` says whether each implementation modifies its input and justifies its complexity.
 
-**If it fails:** redo 1.6, then retry with the failing problem's edge cases written before the code.
+**If it fails:** redo 1.6, then retry after listing the failing problem's edge cases in `notes.md` before coding.
 
 ### 2.2 — Strings, bytes, and runes
 
@@ -391,7 +395,7 @@ Go has no built-in set type, so use a map-based representation.
 
 **Pass criteria:** tests cover duplicates and empty collections. Complexity and ordering guarantees are documented. Tests do not depend on map iteration order.
 
-**If it fails:** if a test is flaky, find where it depends on iteration order. Sort the result or compare as sets, and document the contract.
+**If it fails:** if a test is flaky because of map iteration order, fix the implementation to return a deterministic result (or document a set-equality contract for the instructor to encode in the tests).
 
 ### 2.5 — Linked-list fundamentals
 
@@ -471,7 +475,7 @@ Directory: `phase-2/2-8-queues/`
 **Lab** `b-deque`**:**
 
 - [ ] Implement a deque or a clearly specified subset of deque operations, using a circular buffer.
-- [ ] Test empty behavior and repeated enqueue/dequeue cycles.
+- [ ] Make the provided tests pass for empty behavior and repeated enqueue/dequeue cycles.
 
 **Required edge cases:** dequeue from empty, wraparound in the circular buffer, growth when full, long alternating enqueue/dequeue sequences.
 
@@ -617,7 +621,7 @@ Directory: `phase-3/3-5-sorting-intervals/`
 **Lab** `a-sorts`**:**
 
 - [ ] Implement insertion sort and merge sort yourself.
-- [ ] Test merge sort's stability using structs with equal keys.
+- [ ] Pass the provided stability tests for merge sort (structs with equal keys).
 - [ ] Sort records by multiple keys with `slices.SortFunc` or `sort.Slice`.
 
 **Lab** `b-intervals`**:**
@@ -719,7 +723,7 @@ Directory: `phase-4/4-2-trees/`
 
 **Lab** `a-traversals`**:**
 
-- [ ] Define a `TreeNode` and a test helper that builds a tree from a level-order slice with `nil` markers.
+- [ ] Define a `TreeNode`. The instructor provides a test helper that builds a tree from a level-order slice with `nil` markers.
 - [ ] Preorder, inorder, and postorder traversal, both recursive and iterative with an explicit stack.
 - [ ] Level-order traversal with a queue, returning one slice per level.
 
@@ -950,7 +954,7 @@ Directory: `phase-5/5-2-greedy/`
 
 **Lab** `b-counterexample`**:**
 
-- [ ] Show that greedy coin change fails for coins `{1, 3, 4}` and target `6`, with a test against a brute-force version.
+- [ ] Explain in `notes.md` why greedy coin change fails for coins `{1, 3, 4}` and target `6`, using the provided test against a brute-force version.
 
 **Required edge cases:** empty input, a single element, all intervals overlapping, a zero jump at the start, no valid gas station.
 
@@ -1187,17 +1191,16 @@ Directory: `phase-6/6-5-follow-ups/`
 
 Directory: `phase-6/6-6-go-fluency/`
 
-**Lab** `a-from-memory`**:** In 15 minutes, with no documentation, write:
+**Lab** `a-from-memory`**:** In 15 minutes, with no documentation, implement the following so the instructor-provided tests pass:
 
 - [ ] A `container/heap` implementation and its use.
 - [ ] A sort with a custom multi-key comparator.
 - [ ] BFS on a grid.
 - [ ] A struct with methods, and a map of slices.
-- [ ] A table-driven test.
 
 **Assessed by:** Implementation.
 
-**Pass criteria:** the code compiles on the first or second attempt and the tests pass.
+**Pass criteria:** the code compiles on the first or second attempt and the provided tests pass.
 
 **If it fails:** list every syntax gap in `mistakes.md`, drill each one for five minutes, and retry the next day.
 

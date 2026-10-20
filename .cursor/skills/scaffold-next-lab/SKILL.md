@@ -1,12 +1,12 @@
 ---
 name: scaffold-next-lab
-description: Finds the next incomplete lab in SYLLABUS.md, creates its directory with README, stubs, tests, and notes, verifies the expected failing state, then commits and pushes. Use when the user asks to set up the next lab, sublesson, or lesson.
+description: Finds the next incomplete lab in SYLLABUS.md, creates its directory with README, stubs, instructor-written tests, and notes, verifies the expected failing state, then commits and pushes. Use when the user asks to set up the next lab, sublesson, or lesson.
 disable-model-invocation: true
 ---
 
 # Scaffold the next lab
 
-The learner writes every solution. This skill builds the lab around the work, never the work itself.
+The learner writes every **solution**. This skill builds the lab **and writes the full test suite**. The learner must not be asked to write the tests.
 
 ## 1. Find the next lab
 
@@ -20,11 +20,12 @@ The learner writes every solution. This skill builds the lab around the work, ne
 
 | Lab kind | Signal | What to generate |
 | --- | --- | --- |
-| Implementation | Named functions to implement | Stub `.go` + full black-box `_test.go` |
-| Test-writing | The checkboxes ask the learner to write or demonstrate tests (e.g. 1.1, 1.6 `b-aliasing`, 1.7) | Stub or supplied code + `_test.go` skeleton listing required cases as `// TODO` |
-| Written | Deliverable is `notes.md` only (e.g. 1.3, 1.4) | Prompts/snippets in `README.md` + empty `notes.md` sections |
+| Implementation | Named functions to implement | Stub `.go` + **full** black-box `_test.go` covering required edge cases |
+| Demonstration / prediction | Learner predicts behavior then confirms (e.g. 1.6 `b-aliasing`) | Full demonstration `_test.go` + `notes.md` prompts for predictions; no solution code required beyond what the syllabus asks |
+| Debugging | Faulty code to fix (e.g. 1.7 `a-faulty`) | Deliberately faulty `.go` + **full failing** `_test.go` (regression + boundary cases) |
+| Written | Deliverable is `notes.md` only (e.g. 1.3, 1.4) | Prompts/snippets in `README.md` + empty `notes.md` sections; tests only if the syllabus needs runnable snippets |
 
-Lab 1.7 `a-faulty`: write the deliberately faulty implementation with one subtle bug. Do not write the regression test and do not hint at the bug in comments.
+Never leave `_test.go` as a TODO skeleton for the learner to fill in. The instructor owns the tests.
 
 ## 3. Write the files
 
@@ -57,21 +58,23 @@ go test ./<lab path>/ -v
 
 **`<name>.go`** — package named after the lab (`package sumcounteven`, letters only). Exact signatures from the syllabus, each body `panic("unimplemented")`. Doc comments state the contract only when the syllabus fixes it; when the learner must decide the contract, leave a `// Contract: decide and document` line instead.
 
-**`<name>_test.go`** for implementation labs:
+For lab 1.7 `a-faulty`: write the deliberately faulty implementation with one subtle bug. Do not hint at the bug in comments. The tests must fail against that code.
+
+**`<name>_test.go`** (instructor-written, always complete for implementation and debugging labs):
 - Table-driven, `t.Run` per case, one named case per required edge case plus normal cases.
 - Black-box: assert outputs and documented behavior only. Do not encode one particular algorithm.
 - If the lab is assessed by Algorithm correctness, add a randomized test against a simple brute-force reference written in the test file. Seed with a fixed value and log it.
-- Where the learner must choose a contract (e.g. empty-slice result, `math.MinInt / -1`), leave that case as a `t.Skip("decide the contract, then write this case")`.
-- Add `bench_test.go` only when the lab asks for a benchmark, and only as a skeleton with sizes listed.
+- Where the learner must choose a contract (e.g. empty-slice result, `math.MinInt / -1`), leave that case as a `t.Skip("decide the contract, then ask the instructor to complete this case")`. Do **not** ask the learner to write the test.
+- Add `bench_test.go` only when the lab asks for a benchmark. Prefer a runnable benchmark harness the learner only runs; a skeleton is acceptable if sizes are listed.
 
-**`notes.md`** — one heading per Complexity or Reasoning item, empty under each heading.
+**`notes.md`** — one heading per Complexity or Reasoning item, empty under each heading. For prediction labs, include headings for each prediction the syllabus requires.
 
-Never write a working implementation, an answer key, or completed `notes.md` content.
+Never write a working implementation (except the intentional fault in debugging labs), an answer key, or completed `notes.md` content.
 
 ## 4. Verify the expected state
 
 - If no `go.mod` exists at the repo root and this is lab 1.1, leave module creation to the learner (it is a checkbox). Skip the test run and say so.
-- Otherwise run `go vet ./<lab path>/` (must pass) and `go test ./<lab path>/` (must fail with `unimplemented`, or pass with skips/TODOs for test-writing labs). A compile error means the scaffold is broken: fix the scaffold, not the stub.
+- Otherwise run `go vet ./<lab path>/` (must pass) and `go test ./<lab path>/` (must fail with `unimplemented`, or fail on the planted bug for debugging labs, or pass with skips only for open-contract cases / written labs with no code). A compile error means the scaffold is broken: fix the scaffold, not by weakening the tests.
 
 ## 5. Commit and push
 
@@ -81,4 +84,4 @@ Never write a working implementation, an answer key, or completed `notes.md` con
 
 ## 6. Report
 
-Tell the user the lab path, what they need to write, the test command, and suggest starting with the `teach-concept` skill.
+Tell the user the lab path, that the tests are already written, what they need to implement, the test command, and suggest starting with the `teach-concept` skill.

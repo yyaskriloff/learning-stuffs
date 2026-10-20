@@ -8,7 +8,7 @@ The goal is to become confident solving unfamiliar data structures and algorithm
 
 Since I'm already an experienced developer, we won't teach programming from scratch. Instead, we'll focus on algorithmic problem-solving, understanding the underlying mechanics, recognizing patterns, and translating those patterns into Go.
 
-**The central rule: I will do the work myself.** ChatGPT will teach, ask questions, give exercises, review code, challenge reasoning, and adapt lessons based on demonstrated understanding. It won't immediately hand me solutions just because a problem is difficult.
+**The central rule: I will do the work myself.** The instructor (agent) will teach, ask questions, give exercises, **write the tests**, review code, challenge reasoning, and adapt lessons based on demonstrated understanding. It won't immediately hand me solutions just because a problem is difficult. My job is to implement solutions that satisfy the provided tests and to defend the reasoning.
 
 ### The Five-Step Learning Loop
 
@@ -21,8 +21,8 @@ Since I'm already an experienced developer, we won't teach programming from scra
    - Look for ways to improve it.
 
 3. **Implement it in Go**
-   - Write the code myself.
-   - Run tests and debug failures.
+   - Write the solution myself.
+   - Run the instructor-provided tests and debug failures.
    - Use Go's standard library where appropriate.
 
 4. **Defend my solution**
@@ -38,7 +38,8 @@ Since I'm already an experienced developer, we won't teach programming from scra
 
 - **Hints before answers:** Start with questions or small hints, escalating only when necessary.
 - **No fake mastery:** Understanding an explanation isn't the same as independently solving a problem.
-- **Tests are mandatory:** Use examples, edge cases, and randomized or property-based checks when useful.
+- **Agent writes tests; I write solutions:** When a lab is scaffolded, the instructor provides the full test suite. I implement until those tests pass.
+- **Tests are mandatory:** The instructor provides examples, edge cases, and randomized or property-based checks when useful. I make them pass without rewriting the suite to hide bugs.
 - **Complexity must be justified:** Explain why a solution has a particular time and space complexity.
 - **Go is part of the curriculum:** Learn slices, maps, pointers, structs, interfaces, and other relevant language features through actual problems.
 - **Mistakes are diagnostic:** Identify whether the difficulty comes from the algorithm, Go, debugging, or reasoning, and adjust the exercises accordingly.
@@ -59,9 +60,9 @@ Topics:
 - Go functions, slices, maps, structs, and testing
 - Loops, nested loops, and basic problem decomposition
 - Brute-force solutions and optimization
-- Writing tests and debugging systematically
+- Running provided tests and debugging systematically
 
-**Milestone:** Implement simple solutions from scratch and explain their complexity.
+**Milestone:** Implement simple solutions from scratch that pass the provided tests, and explain their complexity.
 
 ### Stage 2: Core Data Structures
 
@@ -138,9 +139,9 @@ Some topics may take one session, while others may require several. Topics such 
 
 [SYLLABUS.md](SYLLABUS.md) is the ordered lesson list for this program. Every checkbox in it is a verifiable task, and each lesson states its assessment types, edge cases, pass criteria, and remediation path.
 
-A lesson can contain several labs. A lab can contain several tests. Each lab is one checkbox on the syllabus: a specific piece of work with a result that can be checked.
+A lesson can contain several labs. A lab can contain several tests written by the instructor. Each lab is one checkbox on the syllabus: a specific piece of work with a result that can be checked.
 
-Explaining correctness and recognizing patterns are assessed on their own. A passing unit test verifies behavior. It does not, by itself, show that I can explain the algorithm or choose the pattern.
+I write the implementation; the agent writes the tests. Explaining correctness and recognizing patterns are assessed on their own. A passing unit test verifies behavior. It does not, by itself, show that I can explain the algorithm or choose the pattern.
 
 ### How a checkbox is verified
 
@@ -166,7 +167,7 @@ Every checkbox uses one or more of these assessment types. The lab states which 
 
 ### Directory layout
 
-Each lesson has its own directory. Each lab inside that lesson has its own directory. A lab directory is self-contained: the task, my solution, the tests or rubric, the edge cases, the pass/fail rule, and the remediation path all live there.
+Each lesson has its own directory. Each lab inside that lesson has its own directory. A lab directory is self-contained: the task, my solution, the instructor-provided tests or rubric, the edge cases, the pass/fail rule, and the remediation path all live there.
 
 Lessons are grouped by phase:
 
@@ -222,7 +223,7 @@ Learn:
 - Zero values
 - Loops
 - Errors
-- Go's testing conventions
+- How to read failing Go tests and debug against them
 
 ### As Data Structures Become More Complex
 
@@ -249,8 +250,8 @@ Learn:
 
 Practice:
 
-- Table-driven tests
-- Benchmarks when useful
+- Making table-driven and property tests pass
+- Reading benchmarks when useful
 - Race-free code where relevant
 - Idiomatic error handling
 - Readable implementations
@@ -280,7 +281,7 @@ Every substantial problem should follow this process. The objective is to make i
 ### Implementation
 
 - [ ] Implement the solution in Go.
-- [ ] Test normal cases and edge cases.
+- [ ] Run the provided tests (normal and edge cases) and fix failures.
 - [ ] Explain correctness and complexity aloud.
 
 I am not expected to find the optimal solution immediately. A correct brute-force solution is often the best starting point because it provides something concrete to reason about and improve.
@@ -300,13 +301,14 @@ For each lesson:
 5. Review my reasoning and implementation.
 6. Ask follow-up questions to test understanding.
 7. Give hints before providing more direct guidance.
-8. Require me to test and analyze my implementation.
+8. Provide the tests, require me to make them pass, and require me to analyze my implementation.
 9. Provide a variation to verify that I can transfer what I learned.
 10. Track my progress and revisit weak areas.
 
 ### Avoid
 
 - Giving complete solutions before I've had a chance to attempt the problem.
+- Asking me to write the lab's test suite (the instructor owns `_test.go`).
 - Treating a correct answer as proof that I understand the algorithm.
 - Introducing too many concepts at once.
 - Overexplaining concepts I have already demonstrated that I understand.
@@ -318,7 +320,7 @@ For each lesson:
 - Hands-on exercises.
 - Independent reasoning.
 - Clear explanations of complexity.
-- Debugging and test-driven verification.
+- Debugging against provided tests (solution-driven verification).
 - Realistic interview questions.
 - Progressive difficulty.
 - Retention and transfer of knowledge.
@@ -334,7 +336,7 @@ By the end of the program, I should be able to:
 - Choose appropriate data structures and justify the choice.
 - Analyze time and space complexity accurately.
 - Write clean, idiomatic Go under interview conditions.
-- Test edge cases and debug incorrect solutions.
+- Reason about edge cases and debug incorrect solutions against failing tests.
 - Explain my reasoning clearly to an interviewer.
 - Adapt a known approach to a new problem.
 - Solve problems under realistic time constraints.

@@ -9,7 +9,8 @@ description: Discusses the learner's planned approach to a DSA/Go lab, guiding w
 
 - Hints before answers. Never write the solution or pseudocode that is the solution.
 - Correct a flaw by pointing at the input that breaks it, not by rewriting the algorithm.
-- A plan that would pass the tests but cannot be explained is not done.
+- A plan that would pass the provided tests but cannot be explained is not done.
+- Do not ask the learner to write the test suite; the instructor owns the tests.
 
 ## Workflow
 

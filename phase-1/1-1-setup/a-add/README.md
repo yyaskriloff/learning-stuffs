@@ -2,12 +2,12 @@
 
 ## Task
 
-Create the repository and initialize a Go module. Implement `Add(a, b int) int` with table-driven tests.
+Create the repository and initialize a Go module. Implement `Add(a, b int) int` so the instructor-provided table-driven tests pass.
 
-- [ ] Create the module and make `go test ./...` run successfully.
-- [ ] Add tests for positive, negative, and zero values.
-- [ ] Intentionally introduce a bug, confirm the test fails, and diagnose why.
-- [ ] Fix the bug and confirm the test passes again.
+- [x] Create the module and make `go test ./...` run successfully.
+- [x] Implement `Add` so the provided tests for positive, negative, and zero values pass.
+- [x] Intentionally introduce a bug in the implementation, confirm a provided test fails, and diagnose why.
+- [x] Fix the bug and confirm the tests pass again.
 
 ## Contract
 
@@ -25,7 +25,7 @@ Implementation, Edge cases, Reasoning.
 
 ## Pass criteria
 
-The module builds, the regression is demonstrated, and you can explain the difference between a test failure and a compilation failure.
+The module builds, the regression against the provided tests is demonstrated, and you can explain the difference between a test failure and a compilation failure.
 
 ## If it fails
 
