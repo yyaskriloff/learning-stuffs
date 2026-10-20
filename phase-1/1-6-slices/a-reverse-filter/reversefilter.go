@@ -1,12 +1,22 @@
 package reversefilter
 
+import "slices"
+
 // Reverse reverses nums in place.
 func Reverse(nums []int) {
-	panic("unimplemented")
+	slices.Reverse(nums)
 }
 
 // Filter returns a new slice of elements from nums for which keep returns true,
 // in the same order. It must not modify nums.
 func Filter(nums []int, keep func(int) bool) []int {
-	panic("unimplemented")
+	newSlice := []int{}
+
+	for _, num := range nums {
+
+		if keep(num) {
+			newSlice = append(newSlice, num)
+		}
+	}
+	return newSlice
 }

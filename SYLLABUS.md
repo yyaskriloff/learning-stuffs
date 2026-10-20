@@ -223,8 +223,8 @@ Directory: `phase-1/1-6-slices/`
 
 **Lab** `a-reverse-filter`**:** Implement two functions:
 
-- [ ] Reverse a slice in place.
-- [ ] Filter a slice into a new result without changing the input.
+- [x] Reverse a slice in place.
+- [x] Filter a slice into a new result without changing the input.
 
 **Lab** `b-aliasing`**:** The instructor provides demonstration tests. Before running them, predict in `notes.md`:
 
