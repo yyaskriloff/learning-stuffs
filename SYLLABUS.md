@@ -146,8 +146,8 @@ Directory: `phase-1/1-2-loops/`
 
 **Lab** `a-sum-count-even`**:** Implement:
 
-- [ ] `Sum(nums []int) int`
-- [ ] `CountEven(nums []int) int`
+- [x] `Sum(nums []int) int`
+- [x] `CountEven(nums []int) int`
 - [ ] Explain what changes during each loop iteration and why the final result is correct.
 
 **Required edge cases:** empty slice, one element, all even, all odd, mixed values, negative values.
