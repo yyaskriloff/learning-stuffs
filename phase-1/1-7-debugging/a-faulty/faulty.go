@@ -7,9 +7,13 @@ func RunningSum(nums []int) []int {
 		return []int{}
 	}
 	out := make([]int, len(nums))
-	out[0] = nums[0]
-	for i := 1; i < len(nums); i++ {
-		out[i] = out[i-1] + nums[i-1]
+
+	workingSum := 0
+
+	for i, v := range nums {
+		workingSum += v
+		out[i] = workingSum
 	}
+
 	return out
 }

@@ -248,10 +248,10 @@ Directory: `phase-1/1-7-debugging/`
 
 **Lab** `a-faulty`**:** Take a deliberately faulty implementation of a simple algorithm. The instructor supplies both the faulty code and a failing test suite (including regression and boundary cases).
 
-- [ ] Run the provided tests and reproduce the failure.
-- [ ] Identify the smallest useful failing input from the test output.
-- [ ] Fix the underlying defect in the implementation.
-- [ ] Confirm the provided regression and boundary tests pass.
+- [x] Run the provided tests and reproduce the failure.
+- [x] Identify the smallest useful failing input from the test output.
+- [x] Fix the underlying defect in the implementation.
+- [x] Confirm the provided regression and boundary tests pass.
 - [ ] Explain why the original implementation failed and why those tests catch the regression.
 
 **Assessed by:** Implementation, Edge cases, Reasoning.
