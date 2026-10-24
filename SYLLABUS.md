@@ -252,7 +252,7 @@ Directory: `phase-1/1-7-debugging/`
 - [x] Identify the smallest useful failing input from the test output.
 - [x] Fix the underlying defect in the implementation.
 - [x] Confirm the provided regression and boundary tests pass.
-- [ ] Explain why the original implementation failed and why those tests catch the regression.
+- [x] Explain why the original implementation failed and why those tests catch the regression.
 
 **Assessed by:** Implementation, Edge cases, Reasoning.
 
