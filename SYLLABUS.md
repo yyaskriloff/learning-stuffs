@@ -286,10 +286,10 @@ Directory: `phase-1/1-9-brute-force/`
 
 **Lab** `a-duplicates`**:** Implement duplicate detection twice: once with pairwise comparisons and once with a map.
 
-- [ ] Make both implementations pass the same provided test inputs.
-- [ ] Pass the provided randomized comparison between the two implementations.
+- [x] Make both implementations pass the same provided test inputs.
+- [x] Pass the provided randomized comparison between the two implementations.
 - [ ] Run the provided benchmarks at several input sizes.
-- [ ] Explain the time and space trade-offs.
+- [x] Explain the time and space trade-offs.
 - [ ] Identify when the simpler solution may be preferable.
 
 **Assessed by:** Implementation, Algorithm correctness, Complexity, Reasoning.
