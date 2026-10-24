@@ -288,9 +288,9 @@ Directory: `phase-1/1-9-brute-force/`
 
 - [x] Make both implementations pass the same provided test inputs.
 - [x] Pass the provided randomized comparison between the two implementations.
-- [ ] Run the provided benchmarks at several input sizes.
+- [x] Run the provided benchmarks at several input sizes.
 - [x] Explain the time and space trade-offs.
-- [ ] Identify when the simpler solution may be preferable.
+- [x] Identify when the simpler solution may be preferable.
 
 **Assessed by:** Implementation, Algorithm correctness, Complexity, Reasoning.
 
