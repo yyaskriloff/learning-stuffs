@@ -304,8 +304,8 @@ Directory: `phase-1/exit/`
 
 - [x] Solve three unseen beginner problems, each passing the instructor's tests.
 - [x] Score at least 8/10 on a complexity quiz.
-- [ ] Explain a bug and how the provided regression test prevents it from returning.
-- [ ] Pass a fresh slice-mutation exercise.
+- [x] Explain a bug and how the provided regression test prevents it from returning.
+- [x] Pass a fresh slice-mutation exercise.
 
 **If it fails:** repeat the lesson that matches the missed item (1.3 or 1.4 for complexity, 1.6 for slices, 1.7 for debugging), then retake that item with a new problem.
 

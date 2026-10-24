@@ -6,8 +6,8 @@ Unseen problems that retest Phase 1. Work top to bottom. Do not look at answer k
 
 - [x] Solve three unseen beginner problems (`a-count-in-range`, `b-any-pair-sum`, `c-partition`), each passing the instructor's tests.
 - [x] Score at least 8/10 on the complexity quiz (`d-complexity-quiz`).
-- [ ] Fix the bug in `e-debug-regression` and explain how the regression test prevents it from returning.
-- [ ] Pass the slice-mutation exercise (`f-slice-mutation`).
+- [x] Fix the bug in `e-debug-regression` and explain how the regression test prevents it from returning.
+- [x] Pass the slice-mutation exercise (`f-slice-mutation`).
 
 ## If it fails
 

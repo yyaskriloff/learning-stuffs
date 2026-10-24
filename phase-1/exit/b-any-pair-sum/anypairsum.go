@@ -5,12 +5,14 @@ package anypairsum
 func AnyPairSum(nums []int, target int) bool {
 
 	for i, iv := range nums {
-		for j, jv := range nums {
+
+		for j := i + 1; j < len(nums); j++ {
+
 			if i == j {
 				continue
 			}
 
-			if iv+jv == target {
+			if iv+nums[j] == target {
 				return true
 			}
 

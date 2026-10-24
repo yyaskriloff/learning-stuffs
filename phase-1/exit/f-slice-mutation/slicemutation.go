@@ -22,12 +22,11 @@ func DropWhile(nums []int, drop func(int) bool) []int {
 
 	for _, v := range nums {
 
-		if donePrefix {
-			newNums = append(newNums, v)
-		} else if !drop(v) {
-			newNums = append(newNums, v)
+		if donePrefix || !drop(v) {
 			donePrefix = true
+			newNums = append(newNums, v)
 		}
+
 	}
 
 	return newNums
