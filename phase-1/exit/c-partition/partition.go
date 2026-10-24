@@ -8,12 +8,11 @@ func Partition(nums []int, pivot int) (less, ge []int) {
 	runningGe := []int{}
 
 	for _, v := range nums {
-		if v < pivot {
-			runningLess = append(runningLess, v)
-		}
 
 		if v >= pivot {
 			runningGe = append(runningGe, v)
+		} else {
+			runningLess = append(runningLess, v)
 		}
 	}
 
