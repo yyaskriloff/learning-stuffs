@@ -36,7 +36,22 @@ func TestMinMax(t *testing.T) {
 }
 
 func TestMinMaxEmptyContract(t *testing.T) {
-	t.Skip("decide the contract, then ask the instructor to complete this case")
+	// Contract: empty/nil → (0, 0, false)
+	for _, tt := range []struct {
+		name string
+		nums []int
+	}{
+		{name: "empty slice", nums: []int{}},
+		{name: "nil slice", nums: nil},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			gotMin, gotMax, gotOK := minmaxsorted.MinMax(tt.nums)
+			if gotOK || gotMin != 0 || gotMax != 0 {
+				t.Errorf("MinMax(%v) = (%d, %d, %v); want (0, 0, false)",
+					tt.nums, gotMin, gotMax, gotOK)
+			}
+		})
+	}
 }
 
 func TestIsSortedNonDecreasing(t *testing.T) {
@@ -96,5 +111,20 @@ func TestIndexOfMax(t *testing.T) {
 }
 
 func TestIndexOfMaxEmptyContract(t *testing.T) {
-	t.Skip("decide the contract, then ask the instructor to complete this case")
+	// Contract: empty/nil → (0, false)
+	for _, tt := range []struct {
+		name string
+		nums []int
+	}{
+		{name: "empty slice", nums: []int{}},
+		{name: "nil slice", nums: nil},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			gotIndex, gotOK := minmaxsorted.IndexOfMax(tt.nums)
+			if gotOK || gotIndex != 0 {
+				t.Errorf("IndexOfMax(%v) = (%d, %v); want (0, false)",
+					tt.nums, gotIndex, gotOK)
+			}
+		})
+	}
 }

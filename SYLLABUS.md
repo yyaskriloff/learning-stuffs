@@ -266,9 +266,9 @@ Directory: `phase-1/1-8-contracts/`
 
 **Lab** `a-min-max-sorted`**:** Implement:
 
-- [ ] `MinMax(nums []int) (min, max int, ok bool)`
-- [ ] `IsSortedNonDecreasing(nums []int) bool`
-- [ ] `IndexOfMax(nums []int) (int, bool)`, returning the first occurrence when the maximum repeats.
+- [x] `MinMax(nums []int) (min, max int, ok bool)`
+- [x] `IsSortedNonDecreasing(nums []int) bool`
+- [x] `IndexOfMax(nums []int) (int, bool)`, returning the first occurrence when the maximum repeats.
 
 **Contract:** define what `MinMax` and `IndexOfMax` return for an empty slice.
 
