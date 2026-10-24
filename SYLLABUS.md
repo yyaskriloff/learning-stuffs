@@ -228,9 +228,9 @@ Directory: `phase-1/1-6-slices/`
 
 **Lab** `b-aliasing`**:** The instructor provides demonstration tests. Before running them, predict in `notes.md`:
 
-- [ ] How `len` and `cap` differ in the given examples.
-- [ ] How `append` may reuse or replace a backing array.
-- [ ] How slice aliasing can make one function affect another variable.
+- [x] How `len` and `cap` differ in the given examples.
+- [x] How `append` may reuse or replace a backing array.
+- [x] How slice aliasing can make one function affect another variable.
 
 Then run the provided tests and reconcile any wrong predictions.
 
