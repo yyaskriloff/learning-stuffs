@@ -7,7 +7,7 @@ func CumulativeMax(nums []int) []int {
 		return []int{}
 	}
 	out := make([]int, len(nums))
-	maxSoFar := 0
+	maxSoFar := nums[0]
 	for i, v := range nums {
 		if v > maxSoFar {
 			maxSoFar = v

@@ -302,8 +302,8 @@ Directory: `phase-1/1-9-brute-force/`
 
 Directory: `phase-1/exit/`
 
-- [ ] Solve three unseen beginner problems, each passing the instructor's tests.
-- [ ] Score at least 8/10 on a complexity quiz.
+- [x] Solve three unseen beginner problems, each passing the instructor's tests.
+- [x] Score at least 8/10 on a complexity quiz.
 - [ ] Explain a bug and how the provided regression test prevents it from returning.
 - [ ] Pass a fresh slice-mutation exercise.
 
